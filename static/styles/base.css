@@ -1,0 +1,30 @@
+html,
+body,
+h1,
+div,
+ul,
+li,
+a,
+h2,
+h3,
+strong,
+p {
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+html,
+body {
+  background-color: #F2F4CB;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  outline-style: none;
+}

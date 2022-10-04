@@ -1,0 +1,31 @@
+{{define "header"}}
+<div class="header">
+  <div class="header-center flex">
+    <img class="logo" src="../static/images/yang.jpeg" alt="杨家锋的博客">
+    <ul class="flex">
+      <li><a href="/blog">首页</a> </li>
+      <li><a href="/blog/web">Web技术</a></li>
+      <li><a href="/blog/network">网络与安全</a></li>
+      <li><a href="/blog/writing">散文</a> </li>
+    </ul>
+  </div>
+</div>
+<script>
+  autoActive() 
+  function autoActive() {
+    var url = window.location.href;
+    var lastString = url[url.length-1]
+    var has = /[^a-zA-Z0-9]$/g.test(lastString)
+    if(has){
+      url = url.substring(0,url.length-1)
+    }
+    var a = document.querySelectorAll('.header-center ul li a')
+    a.forEach(function(item, index){
+      var href = item.href
+      if(url === href){
+        a[index].className = 'link-active'
+      }
+    })
+  }
+</script>
+{{end}}

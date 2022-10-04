@@ -1,0 +1,150 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 66px;
+  background-color: #e6e8ca;
+  border-bottom: 1px solid #dadbbd;
+  z-index: 2;
+}
+
+.header .header-center {
+  display: flex;
+  height: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.header .header-center .logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin-left: 5px;
+}
+
+.header ul {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.header li a.link-active {
+  font-weight: bold;
+  color: #000;
+}
+
+.header li a {
+  color: #555;
+}
+
+.flex {
+  display: flex;
+}
+
+.article {
+  padding: 15px;
+}
+
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding-bottom: 100px;
+  margin-top: 80px;
+  background-color: #F2F4CB;
+}
+
+.article h1 {
+  margin-top: 30px;
+  font-size: 20px;
+  color: #000;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.article p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.9;
+}
+
+.article img {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  max-width: 100%;
+}
+
+span.token {
+  line-height: 24px;
+}
+
+.article-list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+}
+
+.article-list li {
+  margin-bottom: 10px;
+}
+
+.article-item {
+  padding: 12px 10px;
+  box-sizing: border-box;
+  width: 100%;
+  text-decoration: none;
+}
+
+.article-item img {
+  max-height: 400px;
+  margin-top: 10px;
+}
+
+.article-item h2 {
+  font-size: 18px;
+  color: #000;
+  font-weight: normal;
+}
+
+.article-item .author,
+.article-item .create-at,
+.article-item .category-name {
+  font-size: 13px;
+  color: #777;
+  font-weight: normal;
+  margin-right: 20px;
+}
+
+.article-item p {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+
+  .container {
+    margin-top: 60px;
+  }
+
+  .header li a {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .header .header-center ul {
+    justify-content: flex-start;
+  }
+
+  .header .header-center ul li {
+    margin-left: 30px;
+  }
+}
