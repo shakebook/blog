@@ -1,0 +1,5 @@
+*.sh
+web/images
+.vscode
+.idea
+secrit.txt

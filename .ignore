@@ -1,6 +1,0 @@
-go_deploy.sh
-web_deploy.sh
-web/images
-.vscode
-.idea
-*.sh
