@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>杨家锋的博客</title>
+</head>
+<link rel="stylesheet" href="http://laughing.plus/web/styles/base.css">
+<link rel="stylesheet" href="http://laughing.plus/web/styles/article.css">
+</head>
+
+<body>
+  {{template "header"}}
+
+  <div class="container">
+    <div class="article">
+      <ul class="article-list">
+        {{range $item := .}}
+        <li>
+          <a class="article-item" href="/blog/{{$item.Id}}">
+            <h2>{{$item.Title}}</h2>
+            <p>
+              <strong class="author">作者：{{$item.Author}}</strong>
+              <strong class="create-at">创建日期：{{$item.CreateTime}}</strong>
+              <strong class="category-name">类型：{{$item.CategoryName}}</strong>
+              <strong class="create-at">浏览量：{{$item.BrowserNumber}}</strong>
+            </p>
+            <img src="http://laughing.plus/web/images/{{$item.ImageUrl}}" alt="{{$item.Title}}">
+          </a>
+        </li>
+        {{ end}}
+      </ul>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js"> </script>
+</body>
+
+</html>

@@ -14,4 +14,4 @@ CREATE TABLE articles
    UNIQUE KEY index_title (title) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
-ALTER TABLE account ADD COLUMN content text AFTER image_url;
+ALTER TABLE articles ADD COLUMN content text AFTER image_url;

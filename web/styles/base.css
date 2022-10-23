@@ -28,3 +28,15 @@ ul {
 a {
   outline-style: none;
 }
+
+.align {
+  align-items: center;
+}
+
+.center {
+  justify-content: center;
+}
+br{
+  display: block;
+  margin-bottom: 10px;
+}

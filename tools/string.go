@@ -1,9 +1,11 @@
 package tools
 
-import "bytes"
+import (
+	"strings"
+)
 
 func PingString(s []string) string {
-	var buffer bytes.Buffer
+	var buffer strings.Builder
 	for _, i := range s {
 		buffer.WriteString(i)
 	}

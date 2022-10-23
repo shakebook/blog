@@ -1,7 +1,7 @@
-package handlers
+package controler
 
 import (
-	"blog/dao"
+	"blog/api"
 	"blog/response"
 	"fmt"
 	"net/http"
@@ -11,11 +11,11 @@ import (
 )
 
 // 查询文章
-func SelectArticleContent(w http.ResponseWriter, r *http.Request) {
+func ArticleContentPage(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	id := vars["id"]
 	articleId, _ := strconv.Atoi(id)
-	articleContent, err := dao.SelectArticleContent(articleId)
+	articleContent, err := api.QueryArticleContent(articleId)
 	if err != nil {
 		fmt.Printf("Query article content faild:%s", err.Error())
 	}

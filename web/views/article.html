@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>杨家锋的博客</title>
+</head>
+<link rel="stylesheet" href="http://laughing.plus/web/styles/prism-xonokai.css" />
+<link rel="stylesheet" href="http://laughing.plus/web/styles/base.css">
+<link rel="stylesheet" href="http://laughing.plus/web/styles/article.css">
+</head>
+
+<body>
+  {{template "header"}}
+  <div class="container">
+    <div class="article">
+      <h1>{{.Title}}</h1>
+      <img src="http://laughing.plus/web/images/{{.ImageUrl}}" alt="{{.Title}}">
+      {{range $item := .Content}}
+      {{if $item.Paragraph}}<p>{{$item.Paragraph}}</p>{{end}}
+      {{if $item.PreCode}}
+      <pre class="line-numbers language-javascript"><code>{{$item.PreCode}}</code></pre>{{end}}
+      {{ end}}
+    </div>
+  </div>
+  <input type="hidden" id="articleId" value="{{.Id}}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js"> </script>
+  <script>
+    function addBrowser() {
+      var id = document.getElementById("articleId").value;
+      fetch("http://laughing.plus/blog/api/article/brower?articleId=" + id)
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+    }
+    addBrowser();
+  </script>
+</body>
+
+</html>

@@ -17,11 +17,11 @@ type Article struct {
 	ThumbsNumber  int
 	CreateTime    string
 	UpdateTime    string
-	Content       string
+	Content       []Content
 }
 
-type ArticleContent struct {
-	Id      int
-	Title   string
-	Content string
+type Content struct {
+	Paragraph template.HTML
+	PreCode   string
+	Image     string
 }

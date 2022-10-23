@@ -1,7 +1,7 @@
-package handlers
+package controler
 
 import (
-	"blog/dao"
+	"blog/api"
 	"blog/response"
 	"fmt"
 	"net/http"
@@ -10,11 +10,10 @@ import (
 )
 
 // 查询文章列表
-func SelectArticleList(w http.ResponseWriter, r *http.Request) {
+func ArticleListPage(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	category := vars["category"]
-	articles, err := dao.SelectArticleList(category)
-	fmt.Printf("select articles, %v", articles)
+	articles, err := api.QueryArticleList(category)
 	if err != nil {
 		fmt.Printf("Query article list faild:%s", err.Error())
 	}

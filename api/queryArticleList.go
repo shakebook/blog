@@ -1,4 +1,4 @@
-package dao
+package api
 
 import (
 	"blog/mysql"
@@ -9,7 +9,7 @@ import (
 )
 
 // 查询文章列表
-func SelectArticleList(category string) ([]*response.Article, error) {
+func QueryArticleList(category string) ([]*response.Article, error) {
 	db := mysql.GetDB()
 	query := `SELECT 
 	id,
@@ -26,7 +26,7 @@ func SelectArticleList(category string) ([]*response.Article, error) {
 	if category != "" {
 		query = tools.PingString([]string{query, ` WHERE category = ?`})
 	}
-
+	query = tools.PingString([]string{query, " ORDER BY create_time DESC;"})
 	stmt, err := db.Prepare(query)
 	if err != nil {
 		return nil, err
