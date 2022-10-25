@@ -18,8 +18,8 @@ func init() {
 	response.Temp = template.Must(template.ParseGlob("./web/views/*.html"))
 	mysql.Connect(&mysql.Infor{
 		UserName:     "root",
-		Password:     ".%fuoa;k$@*..,!Ujf",
-		Addr:         "127.0.0.1:13306",
+		Password:     ".",
+		Addr:         "",
 		DatabaseName: "blog",
 	})
 }
